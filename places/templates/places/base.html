@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Places to Visit{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'places/style.css' %}?v=2">
+</head>
+<body>
+<header class="site-header">
+    <div class="logo">📍 Places to Visit</div>
+    <nav class="main-nav">
+        <a href="{% url 'index' %}">Головна</a>
+        <a href="{% url 'place_list' %}">Мої місця</a>
+        <a href="{% url 'add_place' %}">Додати місце</a>
+    </nav>
+</header>
+
+<main class="content">
+    {% block content %}
+    {% endblock %}
+</main>
+
+<footer class="site-footer">
+    <p>© 2026 Дарʼя Синявська</p>
+</footer>
+</body>
+</html>
